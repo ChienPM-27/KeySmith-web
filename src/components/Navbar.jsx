@@ -1,36 +1,33 @@
 import React from 'react'
 
 const Navbar = () => {
+  
   return (
-    <nav className="fixed top-0 left-0 w-full flex justify-between text-white shadow-md z-50">
-      <div className="px-5 xl:px-12 py-4 flex w-full items-center">
+    <nav className="fixed -top-3 left-0 w-full flex justify-between text-[#E1E0E0] z-30">
+      <div className="px-5 xl:px-30 py-4 flex w-full items-center">
         {/* Logo */}
-        <a className="text-3xl font-bold font-heading" href="#">
-          <img className="h-9" src="./src/assets/logo1.png" alt="logo" />
-        </a>
+        <a className="text-3xl font-bold font-heading text-[#E1E0E0]" href="#">
+          <img className="h-40 w-auto" src="./src/assets/logo.png" alt="logo" />
+        </a>  
 
         {/* Nav Links */}
-        <ul className="hidden md:flex px-4 mx-auto font-semibold font-heading space-x-12">
-          <li><a className="hover:text-gray-200" href="#">Home</a></li>
-          <li><a className="hover:text-gray-200" href="#">Category</a></li>
-          <li><a className="hover:text-gray-200" href="#">Collections</a></li>
-          <li><a className="hover:text-gray-200" href="#">Contact Us</a></li>
+        <ul className="hidden md:flex px-4 -mt-2 mx-auto font-semibold font-heading space-x-12">
+          <li><a className="text-[#E1E0E0] text-xl font-mono hover:text-gray-200" href="#Store">Store</a></li>
+          <li><a className="text-[#E1E0E0] text-xl font-mono hover:text-gray-200" href="#Category">Category</a></li>
+          <li><a className="text-[#E1E0E0] text-xl font-mono hover:text-gray-200" href="#Collections">Collections</a></li>
+          <li><a className="text-[#E1E0E0] text-xl font-mono hover:text-gray-200" href="#Contact">Contact Us</a></li>
         </ul>
 
         {/* Header Icons */}
-        <div className="hidden xl:flex items-center space-x-5">
-          {/* Heart */}
-          <a className="hover:text-gray-200" href="#">
+        <div className="hidden -mt-2 xl:flex items-center space-x-5">
+          {/* Search */}
+          <a className="text-[#E1E0E0] hover:text-gray-200" href="#">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6"
               fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682
-                   a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318
-                   a4.5 4.5 0 00-6.364 0z" />
+                d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z" />
             </svg>
           </a>
-
-          {/* Cart */}
           <a className="flex items-center hover:text-gray-200" href="#">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6"
               fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -59,6 +56,19 @@ const Navbar = () => {
                    0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </a>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" 
+            className="size-6 md:hidden w-7" alt="">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+            </svg>
+            {/* mobile menu */}
+            <div className='md:hidden fixed w-full right-0 top-0 bottom-0 overflow-hidden bg-white transition-all'>
+              <ul className='flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium '>
+                <a href="Store" className='px-4 py-2 rounded-full inline-block'>Store</a>
+                <a href="Store" className='px-4 py-2 rounded-full inline-block'>Category</a>
+                <a href="Store" className='px-4 py-2 rounded-full inline-block'>Collections</a>
+                <a href="Store" className='px-4 py-2 rounded-full inline-block'>Contact Us</a>
+              </ul>
+            </div>
         </div>
       </div>
 
