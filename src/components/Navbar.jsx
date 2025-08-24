@@ -59,11 +59,11 @@ const Navbar = () => {
           </a>
 
           {/* Nav Links - Desktop */}
-          <ul className="hidden md:flex px-4 font-semibold font-heading space-x-12 absolute left-1/2 transform -translate-x-1/2">
-            <li><a className="text-[#E1E0E0] text-xl font-mono hover:text-gray-700 transition-colors duration-200" href="#Store">Store</a></li>
-            <li><a className="text-[#E1E0E0] text-xl font-mono hover:text-gray-700 transition-colors duration-200" href="#Category">Category</a></li>
-            <li><a className="text-[#E1E0E0] text-xl font-mono hover:text-gray-700 transition-colors duration-200" href="#Collections">Collections</a></li>
-            <li><a className="text-[#E1E0E0] text-xl font-mono hover:text-gray-700 transition-colors duration-200" href="#Contact">Contact Us</a></li>
+          <ul className="hidden md:flex px-4 font-semibold space-x-12 absolute left-1/2 transform -translate-x-1/2">
+            <li><a className="text-[#E1E0E0] text-xl font-['Bebas_Neue'] hover:text-gray-700 transition-colors duration-200" href="#Store">Store</a></li>
+            <li><a className="text-[#E1E0E0] text-xl font-['Bebas_Neue'] hover:text-gray-700 transition-colors duration-200" href="#Collab">Collab</a></li>
+            <li><a className="text-[#E1E0E0] text-xl font-['Bebas_Neue'] hover:text-gray-700 transition-colors duration-200" href="#Collection">Collection</a></li>
+            <li><a className="text-[#E1E0E0] text-xl font-['Bebas_Neue'] hover:text-gray-700 transition-colors duration-200" href="#Contact">Contact Us</a></li>
           </ul>
 
           {/* Header Icons - Desktop */}
@@ -158,13 +158,22 @@ const Navbar = () => {
           ? 'opacity-100 visible' 
           : 'opacity-0 invisible pointer-events-none'
       }`}>
-        {/* Background overlay với fade effect */}
+        {/* Background với image từ public/mobile_menu.png */}
         <div 
-          className={`absolute inset-0 bg-white/95 backdrop-blur-sm transition-opacity duration-500 ${
+          className={`absolute inset-0 transition-opacity duration-500 ${
             isMobileMenuOpen ? 'opacity-100' : 'opacity-0'
           }`}
+          style={{
+            backgroundImage: 'url(/mobile_menu.png)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+          }}
           onClick={closeMobileMenu}
-        ></div>
+        >
+          {/* Overlay để tạo hiệu ứng mờ nếu cần */}
+          <div className="absolute inset-0 bg-black/10 backdrop-blur-sm"></div>
+        </div>
         
         {/* Menu content với slide-in effect */}
         <div className={`relative z-10 h-full transition-all duration-500 ease-out transform ${
@@ -176,7 +185,7 @@ const Navbar = () => {
           <div className="absolute top-6 right-6 z-20">
             <button 
               onClick={closeMobileMenu}
-              className="p-2 text-gray-800 hover:text-gray-600 focus:outline-none transition-all duration-200 hover:scale-110 hover:bg-gray-100 rounded-full"
+              className="p-2 text-white hover:text-gray-200 focus:outline-none transition-all duration-200 hover:scale-110 hover:bg-white/20 rounded-full backdrop-blur-sm"
             >
               <svg xmlns="http://www.w3.org/2000/svg" className="h-7 w-7" fill="none"
                 viewBox="0 0 24 24" stroke="currentColor">
@@ -188,26 +197,27 @@ const Navbar = () => {
 
           {/* Menu Content */}
           <div className="flex flex-col items-center justify-center h-full px-8">
+
             {/* Logo với fade-in animation */}
             <div className={`mb-16 -mt-32 transition-all duration-700 delay-100 ${
               isMobileMenuOpen 
                 ? 'opacity-100 translate-y-0' 
                 : 'opacity-0 translate-y-4'
             }`}>
-              <img className="h-32 w-auto" src="./src/assets/logo.png" alt="logo" />
+              <img className="h-32 w-auto drop-shadow-lg" src="./src/assets/logo.png" alt="logo" />
             </div>
 
             {/* Navigation Links với staggered animation */}
             <nav className="flex flex-col items-center space-y-6">
               {[
                 { name: 'Store', href: '#Store', delay: 'delay-200' },
-                { name: 'Category', href: '#Category', delay: 'delay-300' },
-                { name: 'Collections', href: '#Collections', delay: 'delay-400' },
+                { name: 'Collab', href: '#Collab', delay: 'delay-300' },
+                { name: 'Collection', href: '#Collection', delay: 'delay-400' },
                 { name: 'About Us', href: '#Contact', delay: 'delay-500' }
               ].map((item, index) => (
                 <a 
                   key={item.name}
-                  className={`text-2xl font-semibold text-gray-800 hover:text-gray-600 transition-all duration-300 hover:scale-105 transform ${
+                  className={`text-3xl font-bold text-white hover:text-gray-200 transition-all duration-300 hover:scale-105 transform drop-shadow-lg font-['Bebas_Neue'] ${
                     isMobileMenuOpen 
                       ? `opacity-100 translate-y-0 ${item.delay}` 
                       : 'opacity-0 translate-y-4'
@@ -227,7 +237,7 @@ const Navbar = () => {
                 : 'opacity-0 translate-y-4'
             }`}>
               {/* Search Button */}
-              <button className="flex items-center space-x-3 px-6 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-200 hover:scale-105">
+              <button className="flex items-center space-x-3 px-6 py-3 text-white hover:text-gray-200 hover:bg-white/20 rounded-full transition-all duration-200 hover:scale-105 backdrop-blur-sm border border-white/30">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"
                   fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
@@ -237,7 +247,7 @@ const Navbar = () => {
               </button>
 
               {/* User Account */}
-              <button className="flex items-center space-x-3 px-6 py-3 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-200 hover:scale-105">
+              <button className="flex items-center space-x-3 px-6 py-3 text-white hover:text-gray-200 hover:bg-white/20 rounded-full transition-all duration-200 hover:scale-105 backdrop-blur-sm border border-white/30">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5"
                   fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"

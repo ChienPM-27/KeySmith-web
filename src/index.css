@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&family=Bebas+Neue&display=swap');
+
 @import "tailwindcss";
 
-* {
+
+body {
   font-family: Abhaya Libre;
+}
+.special-font {
+  font-family: Bebas Neue;
 }
