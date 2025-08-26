@@ -4,7 +4,7 @@ import Navbar from './Navbar'
 const Header = () => {
   return (
     <div className='min-h-screen mb-4 bg-cover bg-center flex items-center w-full overflow-hidden' 
-    style={{backgroundImage: "url('/background.png')" }} id = 'Header'>
+    style={{backgroundImage: "url('/header_bg.png')" }} id = 'Header'>
       <Navbar /> 
         <div className='container text-left mx-0 py-4 px-6 md:px-0
             lg:px-32 text-white -mt-10'>

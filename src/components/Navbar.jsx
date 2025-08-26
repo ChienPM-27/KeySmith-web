@@ -167,7 +167,7 @@ const Navbar = () => {
             backgroundImage: 'url(/mobile_menu.png)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
+            backgroundRepeat: 'no-repeat',
           }}
           onClick={closeMobileMenu}
         >
@@ -213,7 +213,7 @@ const Navbar = () => {
                 { name: 'Store', href: '#Store', delay: 'delay-200' },
                 { name: 'Collab', href: '#Collab', delay: 'delay-300' },
                 { name: 'Collection', href: '#Collection', delay: 'delay-400' },
-                { name: 'About Us', href: '#Contact', delay: 'delay-500' }
+                { name: 'Contact Us', href: '#Contact', delay: 'delay-500' }
               ].map((item, index) => (
                 <a 
                   key={item.name}
